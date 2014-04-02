@@ -13,5 +13,5 @@ create a select on html
 
 initialize when loaded
 ```
-$("#simpleselect").simpleselect();
+$("#simpleselect").simpleSelect();
 ```
