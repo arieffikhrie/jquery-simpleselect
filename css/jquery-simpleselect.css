@@ -1,0 +1,86 @@
+html, body {
+   margin: 0;
+   padding: 0;
+}
+
+.selectbox {
+   display: inline-block;
+   background-color: #dbe5f2;
+   height: 28px;
+   position: relative;
+   width: 200px;
+   border-radius: 12px;
+   outline: none;
+   color: #333;
+}
+
+.selectbox .selectbox-select {
+   display: inline-block;
+}
+
+.selectbox .selectbox-select .selectbox-select-text {
+   color: #333!important;
+   display: inline-block;
+   height: 30px;
+   line-height: 30px;
+   outline: none;
+   overflow: hidden;
+   text-indent: 10px;
+   width: 170px;
+   word-wrap: normal;
+   white-space:nowrap;
+}
+
+.selectbox .selectbox-select .selectbox-select-arrow {
+   background: url(../img/selectbox-downarrow.png) no-repeat;
+   display: inline-block;
+   height: 30px;
+   outline: none;
+   width: 30px;
+}
+
+.selectbox .selectbox-box {
+   position: absolute;
+   margin: 0;
+   padding: 0;
+   width: 200px;
+   z-index: 1;
+}
+
+.selectbox .selectbox-box ul{
+   margin: 0;
+   padding: 0;
+   height: 200px;
+   border-radius: 8px;
+   background-color: #cddced;
+   list-style: none;
+   overflow-y: auto;
+}
+
+.selectbox .selectbox-box ul li {
+   position: relative;
+   padding: 0;
+   text-indent: 10px;
+   margin: 0px!important;
+}
+
+.selectbox .selectbox-box ul li a {
+   border-bottom: solid 1px #c2d0e2;
+   display: block;
+   outline: none;
+   padding: 7px 3px;
+   line-height: 25px;
+   text-decoration: none;
+   color: #333;
+   word-wrap: normal;
+   white-space:nowrap;
+   overflow: hidden;
+}
+
+.selectbox .selectbox-box ul li:last-child a {
+   border-bottom: 0px;
+}
+
+.selectbox .selectbox-box ul li a.selected {
+   background: #c2d0e2;
+}

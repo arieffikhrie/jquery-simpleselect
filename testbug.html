@@ -1,0 +1,65 @@
+<html>
+<head>
+	<style type="text/css">
+		.selected {
+			background: red;
+		}
+		#focusbox {
+			display: block;
+			width: 100px;
+			height: 100px;
+			border: 1px red solid;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Test 1</li>
+		<li>Test 2</li>
+		<li>Test 3</li>
+		<li>Test 4</li>
+		<li>Test 5</li>
+		<li>Test 6</li>
+		<li>Test 7</li>
+		<li>Test 8</li>
+		<li>Test 9</li>
+	</ul>
+	<div id="focusbox" tabindex="99">press hereee</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('li').first().addClass('selected');
+			$('#focusbox').keydown(function(e){
+				$(this).css('background','red');
+				if ( $('#focusbox').is(':focus') ){
+					console.log($('li'));
+					$('li').each(function(k ,v){
+						if ( $(v).is('.selected') ){
+							if ( e.keyCode == 38 ) {
+								if ( k == 0 )
+									$checkSelected = $('li').length-1;
+								else
+									$checkSelected = k-1;
+							}
+							if ( e.keyCode == 40) { 
+								if ( k == $('li').length-1 )
+									$checkSelected = 0;
+								else
+									$checkSelected = k+1;
+							}
+							return false;
+						} else {
+							$checkSelected = 0;
+							return true;
+						}
+					}).promise().done( function(){
+						$('li.selected').removeClass('selected');
+						$(this).eq($checkSelected).addClass('selected');
+						return false;
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>
