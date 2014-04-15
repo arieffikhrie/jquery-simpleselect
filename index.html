@@ -1,16 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<link href="css/jquery-simpleselect.css" rel="stylesheet"/>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="js/jquery-simpleselect.js"></script>
-	<script src="js/main.js"></script>
-	<script>
-	$(document).ready(function() {
-	});
-	</script>
+	<script src="js/jquery-simpleselect.min.js"></script>
 </head>
 <body>
-	<select id="select">
+	<label for="select">Select label</label>
+	<select id="select" disabled="disabled">
 		<option value="0">Select</option>
 		<option value="1">A</option>
 		<option value="2">B</option>
@@ -29,12 +26,15 @@
 		<option value="15">This is third</option>
 		<option value="16">This is last</option>
 	</select>
+	<br>
+	<input id="test">
+	<label for="select-test">Select label</label>
 	<select id="select-test">
-		<option value="0">Select</option>
+		<option value="0" disabled="disabled">Select</option>
 		<option value="1">A</option>
 		<option value="2">B</option>
 		<option value="3">C</option>
-		<option value="4">D</option>
+		<option value="4" disabled="disabled">D</option>
 		<option value="5">E</option>
 		<option value="6">F</option>
 		<option value="7">G</option>
@@ -46,9 +46,60 @@
 		<option value="13">This is first</option>
 		<option value="14">This is second long option really really long</option>
 		<option value="15">This is third</option>
-		<option value="16">This is last</option>
+		<option value="16" disabled="disabled">This is last</option>
 	</select>
+	<input type="button" id="open" value="open">
+	<input type="button" id="close" value="close">
+	<input type="button" id="toggle" value="toggle">
 	<div>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -59,6 +110,7 @@
 		</p>
 	</div>
 
+	Only work for single select only. multiple select not implemented yet.
 	<select id="select-test2" multiple="multiple">
 		<option value="0">Select</option>
 		<option value="1">A</option>
@@ -78,12 +130,44 @@
 		<option value="15">This is third</option>
 		<option value="16">This is last</option>
 	</select>
-	<div id="test" style="display: block; background: red; width: 300px; height: 300px; position: absolute; top: 500px; left: 250px">
+	<br>
+	<br>
+	<select id="select-test3">
+		<option value="0" disabled="disabled">Select</option>
+		<option value="1" disabled="disabled">A</option>
+		<option value="2" disabled="disabled">B</option>
+		<option value="3" disabled="disabled">C</option>
+	</select>
+	<!-- <div id="test" style="display: block; background: red; width: 300px; height: 300px; position: absolute; top: 500px; left: 250px">
 		<div tabindex="2" id="test2" style="display: block; background: blue; width: 50px; height: 50px; position: relative; top: 100px; left: 100px;">
 
 		</div>
-	</div>
+	</div> -->
 
+	<button id="testbtn">Test</button>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#select-test').simpleSelect({debug:true});
+		$('#select-test2').simpleSelect();
+		$('#select-test3').simpleSelect();
+
+		$('#testbtn').click(function(){
+			console.log($('#select-test').simpleSelect("val"));
+		});
+
+		$('#open').click( function(){
+			$('#select-test').simpleSelect("open");		
+		});
+		$('#close').click( function(){
+			$('#select-test').simpleSelect("close");		
+		});
+		$('#toggle').click( function(){
+			$('#select-test').simpleSelect("toggle", function(){
+				console.log('callback toggle');
+			});		
+		});
+	});
+	</script>
 
 
 </body>

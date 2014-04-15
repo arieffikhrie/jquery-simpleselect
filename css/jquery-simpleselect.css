@@ -3,24 +3,38 @@ html, body {
    padding: 0;
 }
 
+label {
+   line-height: 28px;
+}
+
 .selectbox {
    display: inline-block;
+   z-index: 1;
+   zoom: 1;
+   *display: inline;
    background-color: #dbe5f2;
-   height: 28px;
+   height: 28px; /* test */
    position: relative;
    width: 200px;
    border-radius: 12px;
-   outline: none;
+   /*outline: none;/*test*/
    color: #333;
+   cursor: pointer;
 }
 
-.selectbox .selectbox-select {
-   display: inline-block;
+.selectbox.multiple {
+   height: auto; /* test */
 }
 
-.selectbox .selectbox-select .selectbox-select-text {
+.selectbox.multiple .selectbox-box {
+   position: relative;
+   top: 0;
+}
+
+.selectbox .selectbox-text {
    color: #333!important;
    display: inline-block;
+   float: left;
    height: 30px;
    line-height: 30px;
    outline: none;
@@ -31,12 +45,13 @@ html, body {
    white-space:nowrap;
 }
 
-.selectbox .selectbox-select .selectbox-select-arrow {
+.selectbox .selectbox-arrow {
    background: url(../img/selectbox-downarrow.png) no-repeat;
    display: inline-block;
    height: 30px;
    outline: none;
    width: 30px;
+   float: left;
 }
 
 .selectbox .selectbox-box {
@@ -44,30 +59,33 @@ html, body {
    margin: 0;
    padding: 0;
    width: 200px;
-   z-index: 1;
-}
-
-.selectbox .selectbox-box ul{
-   margin: 0;
-   padding: 0;
-   height: 200px;
+   max-height: 300px; /*test*/
+   top: 30px;
+   left: 0;
+   overflow: hidden;
+   overflow-y: auto;
    border-radius: 8px;
    background-color: #cddced;
    list-style: none;
-   overflow-y: auto;
+   clear: both;
 }
 
-.selectbox .selectbox-box ul li {
+.selectbox .selectbox-box li {
    position: relative;
    padding: 0;
    text-indent: 10px;
    margin: 0px!important;
+   display: inline;
+   width: 100%;
+   float: left;
 }
 
-.selectbox .selectbox-box ul li a {
+.selectbox .selectbox-box li a {
+   padding: 0px;
+   margin: 0px;
    border-bottom: solid 1px #c2d0e2;
    display: block;
-   outline: none;
+   /*outline: none; /*test*/
    padding: 7px 3px;
    line-height: 25px;
    text-decoration: none;
@@ -77,10 +95,15 @@ html, body {
    overflow: hidden;
 }
 
-.selectbox .selectbox-box ul li:last-child a {
+.selectbox .selectbox-box li:last-child a {
    border-bottom: 0px;
 }
 
-.selectbox .selectbox-box ul li a.selected {
+.selectbox .selectbox-box li a.selected {
    background: #c2d0e2;
+}
+
+.selectbox .selectbox-box li a.disabled {
+   color: #bcbcbc;
+   background: #b0b2b5;
 }

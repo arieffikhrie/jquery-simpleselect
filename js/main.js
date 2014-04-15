@@ -1,6 +1,11 @@
 $(document).ready(function() {
 	$('#select-test').simpleSelect();
 	$('#select-test2').simpleSelect();
+	$('#select-test3').simpleSelect();
+
+	// $('select').change(function(){
+	// 	console.log("test");
+	// });
 
 	/*$select = $("#select option");
 	var option = '';
