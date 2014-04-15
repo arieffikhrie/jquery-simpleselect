@@ -200,8 +200,9 @@
 			return selectboxList;
 		},
 		val: function(val){
-			var el = $(this.element),
-			selectbox = el.next();
+			var self = this,
+				el = $(this.element),
+				selectbox = el.next();
 			if ( val === undefined || val === null || val.length === 0 ){
 				return el.val();
 			} else {
@@ -221,6 +222,7 @@
 			if ( callback !== undefined && typeof(callback[0]) === 'function' ){
 				callback[0]();
 			}
+			el.trigger('open');
 		},
 		close: function(callback){
 			var self = this,
@@ -232,6 +234,7 @@
 			if ( callback !== undefined && typeof(callback[0]) === 'function' ){
 				callback[0]();
 			}
+			el.trigger('close');
 		},
 		toggle: function(callback){
 			var self = this,

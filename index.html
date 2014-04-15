@@ -166,6 +166,13 @@
 				console.log('callback toggle');
 			});		
 		});
+
+		$('#select-test').on('open',function(){
+			console.log('select box opened');
+		});
+		$('#select-test').on('change',function(){
+			console.log('changed value to ' + $('#select-test').simpleSelect("val"));
+		});
 	});
 	</script>
 
